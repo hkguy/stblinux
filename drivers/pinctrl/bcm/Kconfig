@@ -54,3 +54,16 @@ config PINCTRL_CYGNUS_MUX
 	  The Broadcom Cygnus IOMUX driver supports group based IOMUX
 	  configuration, with the exception that certain individual pins
 	  can be overrided to GPIO function
+
+config PINCTRL_NS2_MUX
+	bool "Broadcom Northstar2 pinmux driver"
+	depends on OF
+	depends on ARCH_BCM_IPROC || COMPILE_TEST
+	select PINMUX
+	select GENERIC_PINCONF
+	default ARM64 && ARCH_BCM_IPROC
+	help
+	  Say yes here to enable the Broadcom NS2 MUX driver.
+
+	  The Broadcom Northstar2 IOMUX driver supports group based IOMUX
+	  configuration.

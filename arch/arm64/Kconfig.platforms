@@ -2,6 +2,8 @@ menu "Platform selection"
 
 config ARCH_BCM_IPROC
 	bool "Broadcom iProc SoC Family"
+	select PINCTRL
+	select ARCH_REQUIRE_GPIOLIB
 	help
 	  This enables support for Broadcom iProc based SoCs
 
